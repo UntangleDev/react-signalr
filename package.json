@@ -1,9 +1,17 @@
 {
   "name": "@untangledev/react-signalr",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Typed, idiomatic React hooks for ASP.NET Core SignalR.",
   "type": "module",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/UntangleDev/react-signalr"
+  },
+  "bugs": {
+    "url": "https://github.com/UntangleDev/react-signalr/issues"
+  },
+  "homepage": "https://github.com/UntangleDev/react-signalr#readme",
   "sideEffects": false,
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",

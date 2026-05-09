@@ -89,6 +89,13 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Prepare npm provenance metadata
+        run: |
+          npm pkg set repository.type="git"
+          npm pkg set repository.url="https://github.com/${{ github.repository }}"
+          npm pkg set bugs.url="https://github.com/${{ github.repository }}/issues"
+          npm pkg set homepage="https://github.com/${{ github.repository }}#readme"
+
       - name: Publish package
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
