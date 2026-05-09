@@ -3,7 +3,7 @@
 Typed, headless React hooks for ASP.NET Core SignalR.
 
 ```tsx
-import { createSignalRHub, type HubStream } from "react-signalr";
+import { createSignalRHub, type HubStream } from "@untangledev/react-signalr";
 
 interface ServerHub {
   SendMessage(room: string, message: string): Promise<void>;
