@@ -35,7 +35,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: 24.x
           cache: npm
@@ -66,11 +66,22 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup Node for npm
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: 24.x
           registry-url: https://registry.npmjs.org
           cache: npm
+
+      - name: Verify npm authentication
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          if [ -z "${NODE_AUTH_TOKEN}" ]; then
+            echo "::error title=NPM_TOKEN is missing::Add an npm publish token as a repository secret named NPM_TOKEN."
+            exit 1
+          fi
+
+          npm whoami --registry https://registry.npmjs.org/
 
       - name: Install dependencies
         run: npm ci --legacy-peer-deps
@@ -94,7 +105,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup Node for GitHub Packages
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: 24.x
           registry-url: https://npm.pkg.github.com
