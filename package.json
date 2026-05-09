@@ -1,0 +1,54 @@
+{
+  "name": "@untangledev/react-signalr",
+  "version": "0.1.0",
+  "description": "Typed, idiomatic React hooks for ASP.NET Core SignalR.",
+  "type": "module",
+  "license": "MIT",
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "pack:dry": "npm pack --dry-run --cache ./.npm-cache"
+  },
+  "keywords": [
+    "react",
+    "signalr",
+    "aspnetcore",
+    "hooks",
+    "typescript"
+  ],
+  "peerDependencies": {
+    "@microsoft/signalr": ">=10 <11",
+    "react": ">=18.3 <20"
+  },
+  "devDependencies": {
+    "@microsoft/signalr": "10.0.0",
+    "@testing-library/dom": "10.4.1",
+    "@testing-library/react": "16.3.2",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "jsdom": "27.4.0",
+    "react": "19.2.6",
+    "react-dom": "19.2.6",
+    "tsup": "8.5.1",
+    "typescript": "5.9.3",
+    "vitest": "4.1.5"
+  }
+}
