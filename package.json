@@ -1,6 +1,6 @@
 {
   "name": "@untangledev/react-signalr",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Typed, idiomatic React hooks for ASP.NET Core SignalR.",
   "type": "module",
   "license": "MIT",
